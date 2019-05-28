@@ -1,0 +1,76 @@
+
+<!DOCTYPE >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; chaRset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>吉治惠通</title>
+    <link type="text/css" href="css/public.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="z-head02">
+            <div style="text-align:right">
+                <img src="images/Prompt.png" width="80%" /></div>
+        </div>
+    <div class="logo">
+        <img src="images/logo-jzht.png" />
+    </div>
+    <div class="mian_left">
+        <img src="images/Mobile-jzht.png" />
+    </div>
+    <div class="z-head" style="margin-top: 10%;">
+    	<div class="text">
+    		<img src="images/2.png" width="100%" />
+    	</div>
+        <div class="z-head01">
+            <i title="#">
+                <img src="images/android.png" id="id_downandroid" /></i>
+        </div>
+        <div class="z-head01">
+            <i title="#">
+                <img src="images/iphone.png" style="display:none" id="id_downios"/>
+            </i>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        $('.z-head01').show();
+        
+        $(function ($) {
+            $('#id_downandroid').click(function () {
+                if (isWeiXin()) {
+                    $('.z-head02').show();
+                    $('body').css("position", "static")
+                }
+                else {
+                    location.href = "http://mhis.cn:8100/WSZF/dog_v1.0_2019-05-21_release.apk";
+                }
+            });
+            $('#id_downios').click(function () {
+                if (isWeiXin()) {
+                    $('.z-head02').show();
+                    $('body').css("position", "static")
+                }
+                else {
+                    location.href = "#";
+                }
+            });
+            $('.z-head02').click(function () {
+                $('.z-head02').hide();
+                $('body').css("position", "static")
+            });
+        });
+
+
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
